@@ -14,6 +14,7 @@ local EMDEN_URL     = "https://raw.githubusercontent.com/Celi0905/celihub/main/C
 local HAMBURG_URL   = "https://raw.githubusercontent.com/Celi0905/celihub/main/CeliHub_Hamburg_Edition.lua"
 local UNIVERSAL_URL = "https://raw.githubusercontent.com/Celi0905/celihub/main/CeliHub_Universal.lua"
 local COOLGUI_URL   = "https://raw.githubusercontent.com/Celi0905/celihub/main/CeliHub_c00lgui_Edition.lua"
+local MUSIC_URL     = "https://raw.githubusercontent.com/Celi0905/celihub/main/CeliHub_MusicPlayer.lua"
 -- DEV_URL existiert NICHT hier — Dev läuft nur über CeliHub_DevLoader.lua
 
 local function tw(o,p,t,s,d)
@@ -147,7 +148,7 @@ local function ShowGameSelector()
         end)
     end
 
-    local WIN_W=860
+    local WIN_W=1062
     local Win=Instance.new("Frame",BG); Win.Size=UDim2.fromOffset(WIN_W,340); Win.Position=UDim2.new(.5,-WIN_W/2,.6,-170); Win.BackgroundColor3=Color3.fromRGB(10,10,18); Win.BackgroundTransparency=1; Win.BorderSizePixel=0; Win.ZIndex=2
     Instance.new("UICorner",Win).CornerRadius=UDim.new(0,20); Instance.new("UIStroke",Win).Color=Color3.fromRGB(42,42,70)
     tw(Win,{BackgroundTransparency=0,Position=UDim2.new(.5,-WIN_W/2,.5,-170)},0.55,Enum.EasingStyle.Back,Enum.EasingDirection.Out)
@@ -169,6 +170,7 @@ local function ShowGameSelector()
         {icon="🏙️", title="Emergency Hamburg", desc="Fahrzeug Mods • Waffen\nAuto Eat • Alles aus Emden+",    col=Color3.fromRGB(40,110,220), glow=Color3.fromRGB(80,150,255), key="hamburg"},
         {icon="🌍", title="Universal",          desc="Aimbot • ESP • Tracer\nChams • Alle Spiele",             col=Color3.fromRGB(160,40,220), glow=Color3.fromRGB(200,90,255), key="universal"},
         {icon="🟠", title="c00lgui Edition",    desc="Speed/Fly • Skybox • Music\nServer Tools • Disco",       col=Color3.fromRGB(255,140,0),  glow=Color3.fromRGB(255,180,50), key="coolgui"},
+        {icon="🎵", title="Celi Music Player", desc="Playlist • Presets • Pitch\nLautstärke • Loop • IDs",       col=Color3.fromRGB(220,60,180), glow=Color3.fromRGB(255,100,220), key="music"},
     }
 
     local chosen=nil; local cardW=192
@@ -205,7 +207,7 @@ local function ShowGameSelector()
     end
 
     local Foot=Instance.new("TextLabel",Win); Foot.Size=UDim2.fromOffset(WIN_W,22); Foot.Position=UDim2.fromOffset(0,314); Foot.BackgroundTransparency=1
-    Foot.Text="CeliHub v3  •  by Celi 💫  •  4 Scripts  •  Dev Version = nur via DevLoader"
+    Foot.Text="CeliHub v3  •  by Celi 💫  •  5 Scripts  •  Dev = nur via DevLoader"
     Foot.TextColor3=Color3.fromRGB(45,45,70); Foot.Font=Enum.Font.Gotham; Foot.TextSize=11; Foot.ZIndex=3
 
     repeat task.wait(0.1) until chosen~=nil or not SGui.Parent
@@ -225,6 +227,7 @@ local URLS = {
     hamburg   = HAMBURG_URL,
     universal = UNIVERSAL_URL,
     coolgui   = COOLGUI_URL,
+    music     = MUSIC_URL,
     -- DEV NICHT HIER
 }
 
